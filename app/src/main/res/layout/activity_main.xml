@@ -1,18 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/primaryColor">
 
+    <ImageView
+        android:id="@+id/applicationLogo"
+        android:layout_width="230dp"
+        android:layout_height="230dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/application_logo"
+        android:layout_marginTop="95dp"/>
+
+    <!-- fontFamily Obtained from google font -->
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/suitCaseText"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_below="@+id/applicationLogo"
+        android:text="@string/suitcase"
+        android:textSize="72sp"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:fontFamily="@font/rochester_regular"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- fontFamily Obtained from google font -->
+    <TextView
+        android:layout_width="324dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/suitCaseText"
+        android:layout_centerHorizontal="true"
+        android:text="@string/applicationSlogan"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textColor="#99FFFFFF"
+        android:fontFamily="@font/roboto_regular" />
+    
+    <ProgressBar
+        android:id="@+id/SHOW_PROGRESS"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="40dp" />
+
+
+
+</RelativeLayout>

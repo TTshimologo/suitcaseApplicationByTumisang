@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments_navigator.LoginAndSignUpScreenNavigatorActivity"
+    android:background="@color/primaryColor">
+
+    <me.relex.circleindicator.CircleIndicator3
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:id="@+id/indicator"
+        android:layout_alignParentBottom="true"
+        app:ci_drawable="@drawable/persian_pink_circle_indicator_round"/>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/viewPager2"
+        android:layout_above="@id/indicator"
+        android:layout_centerInParent="true"/>
+
+</RelativeLayout>

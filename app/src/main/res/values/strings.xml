@@ -1,3 +1,21 @@
 <resources>
-    <string name="app_name">SuitCaseApplicationByTumisang</string>
+    <string name="app_name">SuitCase</string>
+    <string name="suitcase">SuitCase</string>
+    <string name="login">Login</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="email">Email</string>
+    <string name="first_name">Firstname</string>
+    <string name="last_name">Lastname</string>
+    <string name="contact">contact</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="no_account">Don’t have an account?</string>
+    <string name="have_account">Already have an account?</string>
+    <string name="swipe_left">Swipe Left</string>
+    <string name="swipe_right">Swipe Right</string>
+    <string name="applicationSlogan">Plan and Pack: Your Ultimate Holiday Checklist App</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home">Home</string>
+    <string name="purchased">Purchased</string>
 </resources>

@@ -1,8 +1,12 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.SuitCaseApplicationByTumisang" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!-- For app's toolbar/action bar -->
+        <item name="colorPrimary">@color/primaryColor</item>
+        <!-- For app's status bar -->
+        <item name="colorPrimaryDark">@color/primaryColor</item>
+        <!-- For app's elements -->
+        <item name="colorAccent">@color/colorAccent</item>
     </style>
 
     <style name="Theme.SuitCaseApplicationByTumisang" parent="Base.Theme.SuitCaseApplicationByTumisang" />
