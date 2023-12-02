@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.viewpager2.widget.ViewPager2;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -15,6 +16,7 @@ import com.example.suitcaseapplicationbytumisang.HomeScreenFragment;
 import com.example.suitcaseapplicationbytumisang.LoginFragment;
 import com.example.suitcaseapplicationbytumisang.PurchasedScreenFragment;
 import com.example.suitcaseapplicationbytumisang.R;
+import com.example.suitcaseapplicationbytumisang.adapter.SuitCaseApplicationNavigatorActivityAdaptor;
 import com.example.suitcaseapplicationbytumisang.statusbar.StatusBarUtil;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -22,7 +24,7 @@ import com.google.android.material.navigation.NavigationBarView;
 public class SuitCaseApplicationNavigatorActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
-    FrameLayout frameLayout;
+    ViewPager2 viewPager2;
 
 
     @Override
@@ -32,39 +34,50 @@ public class SuitCaseApplicationNavigatorActivity extends AppCompatActivity {
         StatusBarUtil.setStatusBarColor(this, getColor(R.color.colorPrimaryDark));
 
         bottomNavigationView = findViewById(R.id.bottomNavigation);
-        frameLayout = findViewById(R.id.container);
+        viewPager2 = findViewById(R.id.mainApplicationNavigationViewPager2);
 
-        //Default screen to open after login
-        loadFragment(new HomeScreenFragment());
+        SuitCaseApplicationNavigatorActivityAdaptor fragmentNavigatorActivityAdapter = new
+                SuitCaseApplicationNavigatorActivityAdaptor(getSupportFragmentManager(), getLifecycle());
+        viewPager2.setAdapter(fragmentNavigatorActivityAdapter);
 
+        //Link bottomNavigationView with viewPager 2
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-                int itemID = item.getItemId();
-
-                if (itemID == R.id.homeID) {
-
-                    loadFragment(new HomeScreenFragment());
-
-                } else if (itemID == R.id.purchasedID) {
-
-                    loadFragment(new PurchasedScreenFragment());
-
+                int itemId = item.getItemId();
+                if (itemId == R.id.homeID) {
+                    viewPager2.setCurrentItem(0, true);
+                    return true;
+                } else if (itemId == R.id.purchasedID) {
+                    viewPager2.setCurrentItem(1, true);
+                    return true;
+                } else {
+                    return false;
                 }
+            }
+        });
 
-                return true;
+        // Add a listener to handle page changes in the ViewPager2
+        viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int position) {
+                // Update the selected item in the BottomNavigationView when the page changes
+                bottomNavigationView.setSelectedItemId(getBottomNavigationItemId(position));
             }
         });
 
     }
 
-    private void loadFragment(Fragment fragment) {
-
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.container, fragment);
-        fragmentTransaction.commit();
-
+    // Helper method to map ViewPager2 position to BottomNavigationView item ID
+    private int getBottomNavigationItemId(int position) {
+        switch (position) {
+            case 0:
+                return R.id.homeID;
+            case 1:
+                return R.id.purchasedID;
+            default:
+                return 0;
+        }
     }
+
 }

@@ -7,6 +7,7 @@
         <item name="colorPrimaryDark">@color/primaryColor</item>
         <!-- For app's elements -->
         <item name="colorAccent">@color/colorAccent</item>
+
     </style>
 
     <style name="Theme.SuitCaseApplicationByTumisang" parent="Base.Theme.SuitCaseApplicationByTumisang" />

@@ -31,12 +31,5 @@ public class LoginAndSignUpScreenNavigatorActivity extends AppCompatActivity {
         //Link CircleIndicator3 with ViewPager2
         circleIndicator3.setViewPager(viewPager2);
 
-        //Setting the ViewPager2.OnPageChangeCallback to handle page changes
-        viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
-            @Override
-            public void onPageSelected(int position) {
-                super.onPageSelected(position);
-            }
-        });
     }
 }

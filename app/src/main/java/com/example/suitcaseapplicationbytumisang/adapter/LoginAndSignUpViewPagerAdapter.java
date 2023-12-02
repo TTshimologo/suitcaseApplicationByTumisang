@@ -25,11 +25,13 @@ public class LoginAndSignUpViewPagerAdapter extends FragmentStateAdapter {
     @NonNull
     @Override
     public Fragment createFragment(int position) {
-        if (position == 0) {
-            return new LoginFragment();
+        switch (position) {
+            case 1:
+                return new SignUpFragment();
+            case 0:
+            default:
+                return new LoginFragment();
         }
-        return new SignUpFragment();
-
     }
 
     @Override

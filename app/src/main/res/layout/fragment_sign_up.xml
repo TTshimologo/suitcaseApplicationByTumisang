@@ -183,7 +183,9 @@
                 app:strokeWidth="4dp"
                 app:cornerRadius="10dp"
                 android:paddingTop="10dp"
-                android:paddingBottom="10dp"/>
+                android:paddingBottom="10dp"
+                app:backgroundTint="@color/primaryColor"
+                android:textColor="@color/white"/>
 
             <LinearLayout
                 android:layout_below="@id/signUButton"
