@@ -33,7 +33,8 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(MainActivity.this, SuitCaseApplicationNavigatorActivity.class);
+                Intent intent = new Intent(MainActivity.this,
+                        LoginAndSignUpScreenNavigatorActivity.class);
                 startActivity(intent);
                 // Transition effect
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
