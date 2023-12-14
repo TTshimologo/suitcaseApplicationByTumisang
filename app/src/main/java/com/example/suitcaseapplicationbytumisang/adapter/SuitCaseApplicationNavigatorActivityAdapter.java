@@ -9,9 +9,9 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 import com.example.suitcaseapplicationbytumisang.HomeScreenFragment;
 import com.example.suitcaseapplicationbytumisang.PurchasedScreenFragment;
 
-public class SuitCaseApplicationNavigatorActivityAdaptor extends FragmentStateAdapter {
+public class SuitCaseApplicationNavigatorActivityAdapter extends FragmentStateAdapter {
 
-    public SuitCaseApplicationNavigatorActivityAdaptor(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
+    public SuitCaseApplicationNavigatorActivityAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
         super(fragmentManager, lifecycle);
     }
 

@@ -1,15 +1,19 @@
-package com.example.suitcaseapplicationbytumisang.fragments_navigator;
+package com.example.suitcaseapplicationbytumisang.fragment_navigator;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.widget.TextView;
 
-import com.example.suitcaseapplicationbytumisang.LoginFragment;
 import com.example.suitcaseapplicationbytumisang.R;
-import com.example.suitcaseapplicationbytumisang.SignUpFragment;
 import com.example.suitcaseapplicationbytumisang.adapter.LoginAndSignUpViewPagerAdapter;
 import com.example.suitcaseapplicationbytumisang.statusbar.StatusBarUtil;
+import com.google.android.material.appbar.MaterialToolbar;
+
+import java.util.Objects;
 
 import me.relex.circleindicator.CircleIndicator3;
 

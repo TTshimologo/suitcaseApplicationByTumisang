@@ -4,8 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments_navigator.LoginAndSignUpScreenNavigatorActivity"
+    tools:context=".fragment_navigator.LoginAndSignUpScreenNavigatorActivity"
     android:background="@color/primaryColor">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/indicator"
+        android:layout_centerInParent="true" />
 
     <me.relex.circleindicator.CircleIndicator3
         android:layout_width="match_parent"
@@ -13,12 +20,5 @@
         android:id="@+id/indicator"
         android:layout_alignParentBottom="true"
         app:ci_drawable="@drawable/persian_pink_circle_indicator_round"/>
-
-    <androidx.viewpager2.widget.ViewPager2
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/viewPager2"
-        android:layout_above="@id/indicator"
-        android:layout_centerInParent="true"/>
 
 </RelativeLayout>

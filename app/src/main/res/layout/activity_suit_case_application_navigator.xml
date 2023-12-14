@@ -5,24 +5,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/primaryColor"
-    tools:context=".fragments_navigator.LoginAndSignUpScreenNavigatorActivity">
+    tools:context=".fragment_navigator.LoginAndSignUpScreenNavigatorActivity">
+
+    <include
+        android:id="@+id/mainApplicationToolBar"
+        layout="@layout/toolbar"/>
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/mainApplicationNavigationViewPager2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@+id/mainApplicationToolBar"
         android:layout_above="@id/bottomNavigation"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/bottom_navigation_stroke"
+
         android:layout_alignParentBottom="true"
-        android:background="#4D000000"
+        app:menu="@menu/main_navigation_icons"
         app:itemIconTint="@color/bottom_navigation_icon_color_selector"
         app:itemTextColor="@color/bottom_navigation_text_color_selector"
-        app:menu="@menu/main_navigation_icons"/>
-
-
+        app:elevation="2dp"/>
 
 </RelativeLayout>

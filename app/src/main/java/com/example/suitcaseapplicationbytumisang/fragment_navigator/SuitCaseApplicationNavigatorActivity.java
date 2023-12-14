@@ -1,23 +1,17 @@
-package com.example.suitcaseapplicationbytumisang.fragments_navigator;
+package com.example.suitcaseapplicationbytumisang.fragment_navigator;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager2.widget.ViewPager2;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.FrameLayout;
 
-import com.example.suitcaseapplicationbytumisang.HomeScreenFragment;
-import com.example.suitcaseapplicationbytumisang.LoginFragment;
-import com.example.suitcaseapplicationbytumisang.PurchasedScreenFragment;
 import com.example.suitcaseapplicationbytumisang.R;
-import com.example.suitcaseapplicationbytumisang.adapter.SuitCaseApplicationNavigatorActivityAdaptor;
+import com.example.suitcaseapplicationbytumisang.adapter.SuitCaseApplicationNavigatorActivityAdapter;
 import com.example.suitcaseapplicationbytumisang.statusbar.StatusBarUtil;
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
@@ -33,11 +27,15 @@ public class SuitCaseApplicationNavigatorActivity extends AppCompatActivity {
         setContentView(R.layout.activity_suit_case_application_navigator);
         StatusBarUtil.setStatusBarColor(this, getColor(R.color.colorPrimaryDark));
 
+        //Customer toolbar related
+        MaterialToolbar materialToolbar = findViewById(R.id.mainApplicationToolBar);
+        setSupportActionBar(materialToolbar);
+
         bottomNavigationView = findViewById(R.id.bottomNavigation);
         viewPager2 = findViewById(R.id.mainApplicationNavigationViewPager2);
 
-        SuitCaseApplicationNavigatorActivityAdaptor fragmentNavigatorActivityAdapter = new
-                SuitCaseApplicationNavigatorActivityAdaptor(getSupportFragmentManager(), getLifecycle());
+        SuitCaseApplicationNavigatorActivityAdapter fragmentNavigatorActivityAdapter = new
+                SuitCaseApplicationNavigatorActivityAdapter(getSupportFragmentManager(), getLifecycle());
         viewPager2.setAdapter(fragmentNavigatorActivityAdapter);
 
         //Link bottomNavigationView with viewPager 2
@@ -80,4 +78,9 @@ public class SuitCaseApplicationNavigatorActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.logout_memu, menu);
+        return true;
+    }
 }

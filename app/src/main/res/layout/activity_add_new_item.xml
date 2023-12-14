@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primaryColor"
+    tools:context=".AddNewItemActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include
+            android:id="@+id/addItemToolBar"
+            layout="@layout/toolbar" />
+
+        <!-- Upload Item Image-->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/uploadProfilePicture"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_below="@id/addItemToolBar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="35dp"
+            android:backgroundTint="#1C1B1F"
+            app:shapeAppearanceOverlay="@style/circular"
+            app:strokeColor="@color/persian_pink"
+            app:strokeWidth="4dp">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="95dp"
+                android:layout_height="95dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_photo_camera"/>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/uploadImageID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/uploadProfilePicture"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="12dp"
+            android:text="@string/upload_image"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:fontFamily="@font/roboto_black"/>
+
+        <!-- Name nameTextField -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/addItemNameTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="80dp"
+            android:layout_below="@id/uploadImageID"
+            app:startIconTint="@color/start_icon_selector"
+            android:textColorHint="#99FFFFFF"
+            app:hintTextColor="@color/white"
+            app:boxStrokeColor="@color/persian_pink"
+            app:boxStrokeWidth="2dp"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/addItemNameTextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/name"
+                android:textSize="12sp"
+                android:fontFamily="@font/roboto_medium"
+                android:inputType="text"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Description nameTextField -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/addItemDescriptionTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="80dp"
+            android:layout_below="@id/addItemNameTextInputLayout"
+            app:startIconTint="@color/start_icon_selector"
+            android:textColorHint="#99FFFFFF"
+            app:hintTextColor="@color/white"
+            app:boxStrokeColor="@color/persian_pink"
+            app:boxStrokeWidth="2dp"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/addItemDescriptionTextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/description"
+                android:textSize="12sp"
+                android:fontFamily="@font/roboto_medium"
+                android:inputType="textMultiLine"
+                android:lines="8"
+                android:gravity="top"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Price nameTextField -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/addItemPriceTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="80dp"
+            android:layout_below="@id/addItemDescriptionTextInputLayout"
+            app:startIconTint="@color/start_icon_selector"
+            android:textColorHint="#99FFFFFF"
+            app:hintTextColor="@color/white"
+            app:boxStrokeColor="@color/persian_pink"
+            app:boxStrokeWidth="2dp"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/addItemPriceTextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/price"
+                android:textSize="12sp"
+                android:fontFamily="@font/roboto_medium"
+                android:inputType="text"
+                android:maxLines="10"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Add button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/loginButton"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/addItemPriceTextInputLayout"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="60dp"
+            android:text="@string/add"
+            android:fontFamily="@font/roboto_black"
+            android:textSize="12sp"
+            android:layout_centerHorizontal="true"
+            app:strokeColor="@color/white"
+            app:strokeWidth="4dp"
+            app:cornerRadius="10dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            app:backgroundTint="@color/primaryColor"
+            android:textColor="@color/white"/>
+
+    </RelativeLayout>
+
+</ScrollView>

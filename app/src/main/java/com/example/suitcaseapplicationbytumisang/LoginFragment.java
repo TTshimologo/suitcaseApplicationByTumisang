@@ -6,14 +6,12 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.example.suitcaseapplicationbytumisang.fragments_navigator.LoginAndSignUpScreenNavigatorActivity;
-import com.example.suitcaseapplicationbytumisang.fragments_navigator.SuitCaseApplicationNavigatorActivity;
+import com.example.suitcaseapplicationbytumisang.fragment_navigator.SuitCaseApplicationNavigatorActivity;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.database.DataSnapshot;

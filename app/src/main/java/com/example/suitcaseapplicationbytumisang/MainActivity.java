@@ -8,9 +8,11 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.ProgressBar;
 
-import com.example.suitcaseapplicationbytumisang.fragments_navigator.LoginAndSignUpScreenNavigatorActivity;
-import com.example.suitcaseapplicationbytumisang.fragments_navigator.SuitCaseApplicationNavigatorActivity;
+import com.example.suitcaseapplicationbytumisang.fragment_navigator.LoginAndSignUpScreenNavigatorActivity;
+import com.example.suitcaseapplicationbytumisang.fragment_navigator.SuitCaseApplicationNavigatorActivity;
 import com.example.suitcaseapplicationbytumisang.statusbar.StatusBarUtil;
+
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,11 +22,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        StatusBarUtil.setStatusBarColor(this, getColor(R.color.primaryColor));
 
         progressBar = findViewById(R.id.SHOW_PROGRESS);
-
-        // Setting the status bar color
-        StatusBarUtil.setStatusBarColor(this, getColor(R.color.colorPrimaryDark));
 
         /* Creating a Handler object for a task that is do be executed later after the application
         launches and in this case the task is for the application to switch from the current

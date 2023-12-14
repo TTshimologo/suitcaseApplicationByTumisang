@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ItemDetailActivity"
+    android:background="@color/primaryColor">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/itemDetailsToolbar"
+        android:background="@drawable/toolbar_bottom_stroke"
+        app:titleTextColor="@color/white"
+        android:elevation="2dp"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:menu="@menu/view_item_details_menu"
+        app:title="Details"/>
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/itemDetailsImageView"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_below="@id/itemDetailsToolbar"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        app:shapeAppearance="@style/ShapeAppearanceOverlay.MyApp.CornerSize"
+        android:alpha="0.8"
+        app:strokeColor="@color/white"
+        app:strokeWidth="2dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/itemDetailsLinearLayoutOne"
+        android:layout_below="@id/itemDetailsImageView"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/item_name"
+            android:textSize="32sp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/sansita_swashed_regular"/>
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:dividerColor="@color/white"/>
+
+    </LinearLayout>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/itemDetailsDescriptionTextView"
+        android:layout_below="@id/itemDetailsLinearLayoutOne"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="10dp"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+        in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+        sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum."
+        android:textSize="12sp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/roboto_regular"
+        android:textAlignment="center"
+        android:lines="8"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/itemDetailsDescriptionTextView"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true">
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:dividerColor="@color/white"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/price"
+            android:textColor="@color/white"
+            android:fontFamily="@font/roboto_regular"
+            android:textSize="14sp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"/>
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:dividerColor="@color/white"/>
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
